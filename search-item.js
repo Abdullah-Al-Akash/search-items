@@ -32,11 +32,17 @@ const products = [
 function searchItems(array, searchText) {
         const text = searchText.toLowerCase();
         const product = [];
+        if (searchText.length == 0) {
+                return "Please Write Something!";
+        }
         for (let i = 0; i < array.length; i++) {
                 if (array[i].name.toLowerCase().includes(text)) {
                         product.push(array[i]);
                 }
         }
+        if (product.length == 0) {
+                return "There is no product you have Searched!";
+        }
         return product;
 }
-console.log(searchItems(products, 'macbook'));
+console.log(searchItems(products, 'Macbook'));
